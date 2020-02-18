@@ -13,8 +13,8 @@
         var db = firebase.firestore();
 
         writeSomething = () => db.collection("users").add({
-                first: document.getElementById("nombre").value,
-                last: document.getElementById("apellido").value,
+                first: document.getElementById("name").value,
+                last: document.getElementById("lastname").value,
                 born: 1990,
                 son: {
                     first: "odu",
