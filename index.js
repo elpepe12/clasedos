@@ -12,9 +12,9 @@
         // se crea un objeto "referencia" para poder darle instrucciones al firestore de nuestro proyecto
         var db = firebase.firestore();
 
-        writeSomething = () => db.collection("users").add({
-                first: document.getElementById("name").value,
-                last: document.getElementById("lastname").value,
+        writeSomething = () => db.collection("usuarios").add({
+                first: document.getElementById("nombre").value,
+                last: document.getElementById("apellidos").value,
                 born: 1990,
                 son: {
                     first: "odu",
@@ -29,7 +29,7 @@
                 console.error("Error EN EL DOCUMENTO: ", error);     
             });
 
-        readAll = () => db.collection("users").get().then((querySnapshot) => {
+        readAll = () => db.collection("usuarios").get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     console.log(`${doc.id} => ${doc.data().first}`);
                 });
